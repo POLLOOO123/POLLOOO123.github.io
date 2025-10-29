@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Blog Personal - Estilo Moderno</title>
+
+<style>
+    /* ----------------- ANIMACIONES ----------------- */
+    @keyframes pulseBorder {
+        0% { border-color: rgba(255, 120, 200, 0.2); }
+        50% { border-color: rgba(255, 120, 200, 0.8); }
+        100% { border-color: rgba(255, 120, 200, 0.2); }
+    }
+
+    @keyframes fadeInBody {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes backgroundShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 50% 50%; }
+        100% { background-position: 100% 50%; }
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-100%); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes footerFade {
+        to { opacity: 1; }
+    }
+
+    @keyframes pulseGlow {
+        0% { box-shadow: 0 0 5px rgba(255,120,200,0.3); }
+        50% { box-shadow: 0 0 20px rgba(255,120,200,0.7); }
+        100% { box-shadow: 0 0 5px rgba(255,120,200,0.3); }
+    }
+
+    @keyframes imageFloat {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-5px); }
+        100% { transform: translateY(0); }
+    }
+
+    /* ----------------- ESTILO GENERAL ----------------- */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+        background-size: 400% 400%;
+        animation: backgroundShift 20s ease infinite;
+        color: #222;
+        margin: 0;
+        padding: 0;
+        animation: fadeInBody 2s ease-in;
+    }
+
+    ::-webkit-scrollbar {
+        width: 10px;
+        background-color: #ffe4f0;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #ff78c8;
+        border-radius: 10px;
+    }
+
+    /* ----------------- NAVEGACIÓN ----------------- */
+    nav {
+        background-color: rgba(255, 105, 180, 0.8);
+        padding: 15px 0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        animation: slideDown 1s ease-out;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 0 15px;
+        padding: 10px 20px;
+        border-radius: 6px;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    nav a.activo {
+        background: linear-gradient(45deg, #ff78c8, #ffb199);
+        animation: pulseGlow 2s infinite;
+    }
+
+    nav a:hover {
+        background: linear-gradient(45deg, #ffb199, #ff78c8);
+        transform: scale(1.1);
+    }
+
+    /* ----------------- LAYOUT ----------------- */
+    .layout {
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        gap: 30px;
+        padding: 40px;
+        min-height: 100vh;
+    }
+
+    .sidebar, .videos, .main {
+        border-radius: 15px;
+        padding: 25px;
+        animation: pulseBorder 6s infinite alternate;
+        border: 2px solid transparent;
+        background: rgba(255,255,255,0.8);
+        box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .sidebar:hover, .videos:hover, .main:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 35px rgba(255,120,200,0.3);
+    }
+
+    .main { text-align: center; }
+
+    /* ----------------- GALERÍA ----------------- */
+    .sidebar h2, .videos h2 { 
+        color: #ff78c8; 
+        text-align: center; 
+        margin-bottom: 20px; 
+        animation: slideDown 1.2s ease forwards;
+    }
+
+    .sidebar img {
+        width: 100%;
+        margin-bottom: 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        animation: imageFloat 3s ease-in-out infinite;
+    }
+
+    .sidebar img:hover {
+        transform: scale(1.08) translateY(-3px);
+        box-shadow: 0 0 25px rgba(255,120,200,0.6);
+    }
+
+    /* ----------------- VIDEOS ----------------- */
+    .videos iframe, .videos video {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        border: 2px solid rgba(255,120,200,0.3);
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .videos iframe:hover, .videos video:hover {
+        transform: scale(1.03);
+        box-shadow: 0 0 25px rgba(255,120,200,0.6);
+    }
+
+    /* ----------------- CONTENIDO PRINCIPAL ----------------- */
+    h1 {
+        color: #ff78c8;
+        font-size: 2.6em;
+        margin-bottom: 10px;
+        text-shadow: 0 0 12px rgba(255,120,200,0.4);
+        animation: slideDown 1.5s ease forwards;
+    }
+
+    ol { text-align: left; display: inline-block; padding-left: 0; }
+    ol li {
+        padding: 5px 0;
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    ol li:hover {
+        color: #ff78c8;
+        transform: translateX(8px);
+    }
+
+    /* ----------------- BOTONES Y PIE ----------------- */
+    a.button {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 25px;
+        background: linear-gradient(45deg, #ff78c8, #ffb199);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: all 0.3s;
+        box-shadow: 0 4px 15px rgba(255,120,200,0.5);
+        animation: pulseGlow 2.5s infinite;
+    }
+
+    a.button:hover {
+        background: linear-gradient(45deg, #ffb199, #ff78c8);
+        transform: scale(1.1);
+    }
+
+    footer {
+        margin-top: 40px;
+        padding-top: 15px;
+        border-top: 1px solid #ffb199;
+        font-size: 0.9em;
+        color: #444;
+        text-align: center;
+        opacity: 0;
+        animation: footerFade 2s ease-in 2s forwards; 
+    }
+
+    /* ----------------- RESPONSIVE ----------------- */
+    @media (max-width: 900px) {
+        .layout { 
+            grid-template-columns: 1fr; 
+            padding: 20px;
+            gap: 20px;
+        }
+        nav a { margin: 5px; padding: 8px 10px; }
+    }
+</style>
+</head>
+
+<body>
+    <nav>
+        <a href="inicio.html" class="activo">Inicio</a>
+        <a href="peliculas.html">PELICULAS</a>
+        <a href="juegos.html">JUEGOS</a>
+        <a href="so.html">S.O</a>
+        <a href="ayuda.html">AYUDA</a>
+    </nav>
+
+    <div class="layout">
+        <div class="sidebar">
+            <h2>MIS GUAPOS
+            </h2>
+            <img src="jim.jpg" alt="">
+            <img src="goku.jpg" alt="">
+            <img src="jim2.jpg" alt="">
+            <img src="bici.jpg" alt="">
+        </div>
+
+        <div class="main">
+            <h1>¡Bienvenido a mi página! </h1>
+
+            <h2>Esta página te ofrece:</h2>
+            <ol>
+                <li>Ver películas</li>
+                <li>Juegos optimizados</li>
+                <li>S.O optimizados</li>
+                <li>Ayuda en tareas</li>
+            </ol>
+
+            <h2>OLAAAAA</h2>
+            <img src="cara.jpg" alt="" width="250" style="border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            </a>
+
+            <br>
+            <a href="#" target="_blank" class="button">No aplastes aqui</a>
+
+            <footer>
+                <p>2025 © Mi Blog Personal | Creado con dedicación por <strong>Javier Carrión</strong></p>
+            </footer>
+        </div>
+
+        <div class="videos">
+            <h2>Para que no te aburras</h2>
+        <video src="vedeo1.mp4"></video>
+        </div>
+    </div>
+</body>
+</html>
