@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 MIS JUEGOS</title>
+
+  <style>
+    /* -------- ANIMACIONES -------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #00ffb3; }
+      50% { box-shadow: 0 0 25px #00bfff; }
+      100% { box-shadow: 0 0 10px #00ffb3; }
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* -------- ESTILO GENERAL -------- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #08152f, #0d2957, #1b3e6f);
+      background-size: 300% 300%;
+      animation: backgroundShift 10s infinite alternate;
+      color: #eaf9ff;
+      text-align: center;
+    }
+
+    /* -------- NAV -------- */
+    nav {
+      background-color: rgba(0, 0, 40, 0.6);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      color: #cdeaff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00ffb3;
+      transform: scale(1.1);
+    }
+
+    /* -------- TÍTULO -------- */
+    h1 {
+      font-size: 2.6em;
+      margin-top: 40px;
+      text-shadow: 0 0 15px rgba(0,255,200,0.6);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    /* -------- SECCIÓN DE JUEGOS -------- */
+    .juegos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: glow 4s infinite alternate;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 30px rgba(0,255,200,0.4);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      color: #86f9d8;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #d8f7ff;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background-color: rgba(0, 0, 50, 0.7);
+      color: #cfe9ff;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 700px) {
+      h1 { font-size: 2em; }
+      .juegos { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="juegos.html" style="color:#00ffb3;">Juegos</a>
+    <a href="so.html">S.O</a>
+    <a href="ayuda.html">Ayuda</a>
+  </nav>
+
+  <h1>ESTOS SON JUEGOS PROXIMOS QUE PODRAS INSTALAR </h1>
+
+  <div class="juegos">
+    <div class="card">
+      <img src="roblox.jpg" alt="Roblox">
+      <h3>Roblox</h3>
+      <p>Un universo infinito de creatividad y diversión, lleno de mundos creados por la comunidad 🌍.</p>
+    </div>
+
+    <div class="card">
+      <img src="minecraft.jpg" alt="Minecraft">
+      <h3>Minecraft</h3>
+      <p>Explora, construye y sobrevive en un mundo de bloques lleno de aventuras ⛏️.</p>
+    </div>
+
+    <div class="card">
+      <img src="gta5.jpg" alt="GTA V">
+      <h3>GTA V</h3>
+      <p>Explora Los Santos, completa misiones y vive una historia llena de acción 🚗💥.</p>
+    </div>
+
+    <div class="card">
+      <img src="fortnite.jpg" alt="Fortnite">
+      <h3>Fortnite</h3>
+      <p>Combina estrategia, velocidad y estilo en este battle royale lleno de energía ⚔️.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Mi Blog de Juegos | Creado por <strong>Javier Carrión</strong> 🎮
+  </footer>
+</body>
+</html>

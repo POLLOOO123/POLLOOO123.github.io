@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💻 SISTEMAS OPERATIVOS OPTIMIZADOS</title>
+
+  <style>
+    /* -------- ANIMACIONES -------- */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 10px #00bfff; }
+      50% { box-shadow: 0 0 25px #1e90ff; }
+      100% { box-shadow: 0 0 10px #00bfff; }
+    }
+
+    @keyframes backgroundShift {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* -------- ESTILO GENERAL -------- */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0a1b2a, #13294d, #0f3a70);
+      background-size: 300% 300%;
+      animation: backgroundShift 12s infinite alternate;
+      color: #e0f7ff;
+      text-align: center;
+    }
+
+    /* -------- NAV -------- */
+    nav {
+      background-color: rgba(0, 0, 40, 0.6);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      color: #cdeaff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00bfff;
+      transform: scale(1.1);
+    }
+
+    nav a.active {
+      color: #00ffcc;
+    }
+
+    /* -------- TÍTULO -------- */
+    h1 {
+      font-size: 2.4em;
+      margin-top: 40px;
+      text-shadow: 0 0 15px rgba(0,191,255,0.6);
+      animation: fadeIn 1.2s ease-out;
+    }
+
+    /* -------- SECCIÓN DE SISTEMAS -------- */
+    .sistemas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 15px;
+      padding: 20px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      animation: glow 4s infinite alternate;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(0,191,255,0.5);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .card h3 {
+      color: #00bfff;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      color: #cceeff;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 15px;
+      background-color: rgba(0, 0, 50, 0.7);
+      color: #cfe9ff;
+      font-size: 0.9em;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+    }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 700px) {
+      h1 { font-size: 2em; }
+      .sistemas { padding: 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <a href="inicio.html">Inicio</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="juegos.html">Juegos</a>
+    <a href="so.html" class="active">S.O</a>
+    <a href="ayuda.html">Ayuda</a>
+  </nav>
+
+  <h1>💻 SISTEMAS OPERATIVOS OPTIMIZADOS 💻</h1>
+
+  <div class="sistemas">
+    <div class="card">
+      <img src="windows10.jpg" alt="Windows 10">
+      <h3>Windows 10</h3>
+      <p>Rápido, seguro y optimizado para juegos y productividad. Perfecto para usuarios modernos 🖥️.</p>
+    </div>
+
+    <div class="card">
+      <img src="ubuntu.jpg" alt="Ubuntu">
+      <h3>Ubuntu</h3>
+      <p>Ligero, estable y altamente personalizable. Ideal para desarrolladores y entusiastas de Linux 🐧.</p>
+    </div>
+
+    <div class="card">
+      <img src="macos.jpg" alt="macOS">
+      <h3>macOS</h3>
+      <p>Optimizado para diseño y multimedia, con una interfaz limpia y elegante 🍏.</p>
+    </div>
+
+    <div class="card">
+      <img src="android.jpg" alt="Android">
+      <h3>Android</h3>
+      <p>Versátil y optimizado para móviles y tablets, con cientos de aplicaciones y personalización 📱.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Mi Blog de S.O | Creado por <strong>Javier Carrión</strong> 💻
+  </footer>
+</body>
+</html>
